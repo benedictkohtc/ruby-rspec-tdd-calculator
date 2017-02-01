@@ -34,6 +34,14 @@ class Calculator
     end
   end
 
+  def div(x)
+    if x.class == Fixnum || x.class == Float
+      self.result /= x
+    else
+      invalid_input
+    end
+  end
+
   def reset(x)
     @result = x
   end
