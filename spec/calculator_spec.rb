@@ -33,13 +33,13 @@ describe Calculator do
   end
   describe 'Add' do
     it 'my_calculator.add should add to the current result' do
+      @my_calculator = Calculator.new(1)
       @my_calculator.add(5)
       expect(@my_calculator.result).to eq(6)
     end
     it 'my_calculator.add should not add a string' do
       @my_calculator.add('string')
-      expect (@my_calculator.result) .to eq('Oi! Y u enter letter into calculator?!')
+      expect(@my_calculator.result).to eq('Oi! Y u enter letter into calculator?!')
     end
   end
-
 end
