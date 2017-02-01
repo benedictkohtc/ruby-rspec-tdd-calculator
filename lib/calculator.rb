@@ -5,7 +5,7 @@ class Calculator
     @result = input
   end
 
-  def reset (x)
+  def reset(x)
     @result = x
   end
 end

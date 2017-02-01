@@ -23,7 +23,7 @@ describe Calculator do
       expect(@my_calculator.result).to eq(1)
     end
     it 'my_calculator.result should be read only' do
-      @my_calculator.result = 2
+      @my_calculator.result = 137 if respond_to? :result=
       expect(@my_calculator.result).to eq(1)
     end
     it 'my_calculator.reset(x) should reset the calculator to x' do
