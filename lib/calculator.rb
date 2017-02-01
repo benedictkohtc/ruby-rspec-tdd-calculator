@@ -5,11 +5,15 @@ class Calculator
     @result = input
   end
 
+  def invalid_input
+    @result = 'Oi! Y u enter letter into calculator?!'
+  end
+
   def add(x)
     if x.class == Fixnum || x.class == Float
       self.result += x
     else
-      @result = 'Oi! Y u enter letter into calculator?!'
+      invalid_input
     end
   end
 
@@ -17,7 +21,15 @@ class Calculator
     if x.class == Fixnum || x.class == Float
       self.result -= x
     else
-      @result = 'Oi! Y u enter letter into calculator?!'
+      invalid_input
+    end
+  end
+
+  def mult(x)
+    if x.class == Fixnum || x.class == Float
+      self.result *= x
+    else
+      invalid_input
     end
   end
 
