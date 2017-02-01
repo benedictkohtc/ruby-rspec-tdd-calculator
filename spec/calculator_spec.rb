@@ -129,9 +129,9 @@ describe Calculator do
       @my_calculator.operation('sub', 3)
       expect(@my_calculator.result).to eq(2)
     end
-    it 'my_calculator.operation("mult",x) should do multiplications correctly' do
+    it 'my_calculator.operation("multiply",x) should do multiplications correctly' do
       @my_calculator = Calculator.new(2)
-      @my_calculator.operation('mult', 4)
+      @my_calculator.operation('multiply', 4)
       expect(@my_calculator.result).to eq(8)
     end
     it 'my_calculator.operation("div",x) should do divisions correctly' do
