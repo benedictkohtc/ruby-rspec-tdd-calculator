@@ -3,43 +3,65 @@ class Calculator
 
   def initialize(input)
     @result = input
+    @error_state = false
   end
 
   def invalid_input
+    @error_state = true
     @result = 'Oi! Y u enter letter into calculator?!'
+    self
   end
 
   def add(x)
-    if x.class == Fixnum || x.class == Float
-      self.result += x
-    else
-      invalid_input
-    end
+    if @error_state == false
+      if x.class == Fixnum || x.class == Float
+        self.result += x
+        self.result = self.result.round(2)
+        self
+      else
+        invalid_input
+      end
+  end
+    self
   end
 
   def sub(x)
-    if x.class == Fixnum || x.class == Float
-      self.result -= x
-    else
-      invalid_input
-    end
+    if @error_state == false
+      if x.class == Fixnum || x.class == Float
+        self.result -= x
+        self.result = self.result.round(2)
+        self
+      else
+        invalid_input
+      end
+  end
+    self
   end
 
   def multiply(x)
-    if x.class == Fixnum || x.class == Float
-      self.result = self.result * x.to_f
-      self.result = self.result.round(2)
-    else
-      invalid_input
-    end
+    if @error_state == false
+      if x.class == Fixnum || x.class == Float
+        self.result = self.result * x.to_f
+        self.result = self.result.round(2)
+        self
+      else
+        invalid_input
+      end
+  end
+    self
   end
 
   def div(x)
-    if x.class == Fixnum || x.class == Float
-      self.result /= x
-    else
-      invalid_input
-    end
+    if @error_state == false
+      if x.class == Fixnum || x.class == Float
+        self.result /= x
+        self.result = self.result.round(2)
+        self
+      else
+        invalid_input
+      end
+  end
+    self
   end
 
   def reset(x)

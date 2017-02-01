@@ -108,16 +108,38 @@ describe Calculator do
     end
     it 'my_calculator.chain should calculate a chain of integers floats from the internal result' do
       @my_calculator = Calculator.new(9.9)
-      @my_calculatordiv.div(3.3).multiply(2.2).add(3.3).sub(4.4)
+      @my_calculator.div(3.3).multiply(2.2).add(3.3).sub(4.4)
       expect(@my_calculator.result).to eq(5.5)
     end
     it 'my_calculator.chain should not calculate a chain of integers non numerals' do
+      @my_calculator = Calculator.new(1)
       @my_calculator.div('three').multiply('two').add('three').sub('four')
       expect(@my_calculator.result).to eq('Oi! Y u enter letter into calculator?!')
     end
   end
 
-
+  describe 'Operation Function Tests' do
+    it 'my_calculator.operation("add",x) should do additions correctly' do
+      @my_calculator = Calculator.new(1)
+      @my_calculator.operation('add', 3)
+      expect(@my_calculator.result).to eq(4)
+    end
+    it 'my_calculator.operation("sub",x) should do subtractions correctly' do
+      @my_calculator = Calculator.new(5)
+      @my_calculator.operation('sub', 3)
+      expect(@my_calculator.result).to eq(2)
+    end
+    it 'my_calculator.operation("mult",x) should do multiplications correctly' do
+      @my_calculator = Calculator.new(2)
+      @my_calculator.operation('mult', 4)
+      expect(@my_calculator.result).to eq(8)
+    end
+    it 'my_calculator.operation("div",x) should do divisions correctly' do
+      @my_calculator = Calculator.new(6)
+      @my_calculator.operation('div', 3)
+      expect(@my_calculator.result).to eq(2)
+    end
+  end
 end
 #
 #
