@@ -82,6 +82,23 @@ describe Calculator do
       expect(@my_calculator.result).to eq('Oi! Y u enter letter into calculator?!')
     end
   end
+
+  describe 'Divide Function Tests' do
+    it 'my_calculator.div should divide integers from the internal result' do
+      @my_calculator = Calculator.new(9)
+      @my_calculator.div(3)
+      expect(@my_calculator.result).to eq(3)
+    end
+    it 'my_calculator.div should divide floats from the internal result' do
+      @my_calculator = Calculator.new(10.5)
+      @my_calculator.div(1.5)
+      expect(@my_calculator.result).to eq(7)
+    end
+    it 'my_calculator.div should not divide non numerals' do
+      @my_calculator.div('three')
+      expect(@my_calculator.result).to eq('Oi! Y u enter letter into calculator?!')
+    end
+  end
 end
 #
 #

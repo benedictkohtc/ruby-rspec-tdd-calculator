@@ -25,9 +25,10 @@ class Calculator
     end
   end
 
-  def mult(x)
+  def multiply(x)
     if x.class == Fixnum || x.class == Float
-      self.result *= x
+      self.result = self.result * x.to_f
+      self.result = self.result.round(2)
     else
       invalid_input
     end
