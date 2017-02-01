@@ -65,6 +65,23 @@ describe Calculator do
       expect(@my_calculator.result).to eq('Oi! Y u enter letter into calculator?!')
     end
   end
+
+  describe 'Multiply' do
+    it 'my_calculator.multiply should multiply integers from the internal result' do
+      @my_calculator = Calculator.new(3)
+      @my_calculator.multiply(3)
+      expect(@my_calculator.result).to eq(9)
+    end
+    it 'my_calculator.sub should subtract floats from the internal result' do
+      @my_calculator = Calculator.new(1.1)
+      @my_calculator.multiply(3)
+      expect(@my_calculator.result).to eq(3.3)
+    end
+    it 'my_calculator.sub should not subtract non numerals' do
+      @my_calculator.multiply('three')
+      expect(@my_calculator.result).to eq('Oi! Y u enter letter into calculator?!')
+    end
+  end
 end
 #
 #
