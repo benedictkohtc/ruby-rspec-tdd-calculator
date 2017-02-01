@@ -12,10 +12,10 @@ describe Calculator do
     end
   end
 
-    describe 'Inital Return' do
-      it 'should return 1' do
-        expect(@my_calculator.output).to eq(1)
-      end
+  describe 'Inital Return' do
+    it 'should return 1' do
+      expect(@my_calculator.output).to eq(1)
+    end
   end
   # Tests go here
 end
