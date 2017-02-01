@@ -12,10 +12,23 @@ describe Calculator do
     end
   end
 
-    describe 'Inital Return' do
-      it 'should return 1' do
-        expect(@my_calculator.output).to eq(1)
-      end
+  describe 'Inital Return' do
+    it 'should return 1' do
+      expect(@my_calculator.result).to eq(1)
+    end
   end
-  # Tests go here
+
+  describe 'Results' do
+    it 'my_calculator.result should return the current result' do
+      expect(@my_calculator.result).to eq(1)
+    end
+    it 'my_calculator.result should be read only' do
+      @my_calculator.result = 2
+      expect(@my_calculator.result).to eq(1)
+    end
+    it 'my_calculator.reset(x) should reset the calculator to x' do
+      @my_calculator.reset(7)
+      expect(@my_calculator.result).to eq(7)
+    end
+  end
 end

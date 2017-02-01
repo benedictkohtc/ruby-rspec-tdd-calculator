@@ -1,5 +1,7 @@
 class Calculator
-  # your class goes here
-  # testing testing one two three
-  #just another test
+  attr_reader :result
+
+  def initialize(input)
+    @result = input
+  end
 end
