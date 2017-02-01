@@ -36,6 +36,10 @@ describe Calculator do
       @my_calculator.add(5)
       expect(@my_calculator.result).to eq(6)
     end
+    it 'my_calculator.add should add to the current result even if it is a float' do
+      @my_calculator.add(5.5)
+      expect(@my_calculator.result).to eq(6.5)
+    end
     it 'my_calculator.add should not add a string' do
       @my_calculator.add('string')
       expect (@my_calculator.result) .to eq('Oi! Y u enter letter into calculator?!')
